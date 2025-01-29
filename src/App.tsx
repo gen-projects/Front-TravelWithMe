@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
+import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <Route path="/cancelar" element={<h1>a</h1>} />
             <Route path="/viagens/:id" element={<h1>a</h1>} />
 
-            <Route path="/categorias" element={<h1>a</h1>} />
+            <Route path="/categorias" element={<ListarCategoria />} />
             <Route path="/cadastrarcategorias" element={<h1>a</h1>} />
             <Route path="/editarcategorias" element={<h1>a</h1>} />
             <Route path="/categoria/:id" element={<h1>a</h1>} />
