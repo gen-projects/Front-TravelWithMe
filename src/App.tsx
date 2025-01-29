@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
+import Home from './pages/home/Home'
+import Sobre from './pages/sobre/Sobre'
 
 function App() {
   return (
@@ -8,9 +10,9 @@ function App() {
         
         <div className='min-h-[84.7dvh]'>
           <Routes>
-            <Route path="/" element={<h1>a</h1>} />     
-            <Route path="/home" element={<h1>a</h1>} />     
-            <Route path="/sobre" element={<h1>a</h1>} />
+            <Route path="/" element={<Home />} />     
+            <Route path="/home" element={<Home />} />     
+            <Route path="/sobre" element={<Sobre />} />
             
             <Route path="/viagens" element={<h1>a</h1>} />
             <Route path="/cadastrarviagens" element={<h1>a</h1>} />
