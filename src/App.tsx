@@ -1,7 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
+import Viagens from './pages/viagens/Viagens'
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -12,7 +15,7 @@ function App() {
             <Route path="/home" element={<h1>a</h1>} />     
             <Route path="/sobre" element={<h1>a</h1>} />
             
-            <Route path="/viagens" element={<h1>a</h1>} />
+            <Route path="/viagens" element={<Viagens/>} />
             <Route path="/cadastrarviagens" element={<h1>a</h1>} />
             <Route path="/editarviagens" element={<h1>a</h1>} />
             <Route path="/cancelar" element={<h1>a</h1>} />
