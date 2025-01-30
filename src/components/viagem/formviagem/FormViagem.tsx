@@ -72,19 +72,15 @@ function FormViagem() {
         e.preventDefault()
         setIsLoading(true)
 
-        const novoTempoViagem = viagem.distancia / viagem.velocidade;
-
-        const novaViagem: Viagem = { ...viagem, tempoViagem: novoTempoViagem}
-
         if (id !== undefined) {
             try {
-                await atualizar(`/viagens`, novaViagem, setViagem);
+                await atualizar(`/viagens`, viagem, setViagem);
             } catch (error: any) {
                 alert('Erro ao atualizar a viagem')
             }
         } else {
             try {
-                await cadastrar(`/viagens`, novaViagem, setViagem)
+                await cadastrar(`/viagens`, viagem, setViagem)
             } catch (error: any) {
                 alert('Erro ao cadastrar a viagem')
             }
