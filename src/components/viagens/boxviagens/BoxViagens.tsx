@@ -26,7 +26,7 @@ function BoxViagens({
   );
 
   return (
-    <div className="p-4 bg-gray-900 rounded-lg w-full text-white shadow-lg transition-all duration-300 scrollable">
+    <div className="p-4 md:h-[35rem] bg-gray-900 rounded-lg w-full text-white shadow-lg transition-all duration-300 scrollable">
       {selectedViagem ? (
         <DadosViagem
           viagem={selectedViagem}

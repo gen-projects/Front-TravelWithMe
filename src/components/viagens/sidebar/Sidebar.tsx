@@ -15,7 +15,7 @@ function Sidebar({
   const tipos = ["Todos", ...new Set(viagens.map((viagem) => viagem.tipo))];
 
   return (
-    <div className="w-full  md:h-[75dvh] p-4 bg-gray-800 rounded-lg shadow-md text-white">
+    <div className="w-full  md:h-[35rem] p-4 bg-gray-800 rounded-lg shadow-md text-white">
       <h3 className="text-lg font-bold mb-2">Filtrar por Tipo</h3>
       {tipos.map((tipo) => (
         <button
