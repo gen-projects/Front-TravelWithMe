@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import FormViagem from './components/viagem/formviagem/FormViagem.tsx'
 import CancelarViagem from './components/viagem/cancelarviagem/CancelarViagem.tsx'
 import './App.css'
+import Viagens from './pages/viagens/Viagens'
 
 import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 import FormCategoria from './components/categoria/formCategoria/FormCategoria'
@@ -10,6 +11,8 @@ import Home from './pages/home/Home'
 import Sobre from './pages/sobre/Sobre'
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -20,7 +23,7 @@ function App() {
             <Route path="/home" element={<Home />} />     
             <Route path="/sobre" element={<Sobre />} />
             
-            <Route path="/viagens" element={<h1>a</h1>} />
+            <Route path="/viagens" element={<Viagens/>} />
             <Route path="/cadastrarviagens" element={<FormViagem />} />
             <Route path="/editarviagens/:id" element={<FormViagem/>} />
             <Route path="/cancelar/:id" element={<CancelarViagem />} />
