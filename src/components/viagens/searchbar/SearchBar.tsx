@@ -1,15 +1,13 @@
-
-interface SearchBarProps {
+function SearchBar({
+  setSearchQuery,
+}: {
   setSearchQuery: (query: string) => void;
-}
-
-function SearchBar({ setSearchQuery }: SearchBarProps) {
+}) {
   return (
     <input
       type="text"
       placeholder="Pesquisar viagem..."
-      className="p-2 w-full border border-slate-950 rounded-[3px] shadow-sm 
-              focus:outline-none focus:ring-1 focus:ring-slate-950"
+      className="p-3 w-full border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       onChange={(e) => setSearchQuery(e.target.value)}
     />
   );
