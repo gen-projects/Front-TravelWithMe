@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import Categoria from "../../../models/Categoria"
 import { buscar, buscarCategoria } from "../../../services/Service"
 import LinhaCategoria from "../linhaCategoria/LinhaCategoria"
@@ -9,6 +9,7 @@ import { MagnifyingGlass } from "@phosphor-icons/react"
 function ListarCategoria() {
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
+    const [filtro, setFiltro] = useState('');
 
     async function buscarCategorias() {
         try{
@@ -26,9 +27,13 @@ function ListarCategoria() {
         }
     }
 
+    function limparFiltro(){
+        setFiltro("")
+    }
+
     useEffect(() =>{
         buscarCategorias()
-    },[categorias.length])
+    },[])
 
 
     return (
@@ -37,24 +42,29 @@ function ListarCategoria() {
                 <h2 className="text-2xl font-semibold mb-4">Filtrar por categoria:</h2>
                 <div className="flex flex-col gap-1 w-full">
                     <p className="cursor-pointer hover:bg-slate-800
-                                p-2 rounded-md">Todos</p>
+                                p-2 rounded-md" onClick={()=>{buscarCategorias(); limparFiltro();}}>Todos</p>
                     <p className="cursor-pointer hover:bg-slate-800
-                                p-2 rounded-md">Carro Popular</p>
+                                p-2 rounded-md" onClick={()=>{buscarPorNome("Carro popular"); limparFiltro();}}>Carro Popular</p>
                     <p className="cursor-pointer hover:bg-slate-800
-                                p-2 rounded-md">Mini Van</p>
+                                p-2 rounded-md" onClick={()=>{buscarPorNome("Mini Van"); limparFiltro();}}>Mini Van</p>
                     <p className="cursor-pointer hover:bg-slate-800
-                                p-2 rounded-md">Moto</p>
+                                p-2 rounded-md" onClick={()=>{buscarPorNome("Moto"); limparFiltro();}}>Moto</p>
                 </div>
             </div>
             <div className="p-2 w-full ml-4">
                 <div className="flex pb-1" >
                     <form className="flex flex-row overflow-hidden rounded-2xl max-h-10 w-full 
-                                    border border-gray-400 bg-gray-200 mr-1">
+                                    border border-gray-400 bg-gray-200 mr-1"
+                                        onClick={(e) => {e.preventDefault();
+                                        buscarPorNome(filtro); 
+                                    }}>
                         <input 
                             type="text"
                             name="filtro"
                             placeholder="Pesquise por Categoria" 
-                            className="border-r border-gray-400 w-full p-2" 
+                            className="border-r border-gray-400 w-full p-2"
+                            value={filtro} // O valor do input é controlado pelo estado
+                            onChange={(e) => setFiltro(e.target.value)} 
                         />
                         <div className="flex justify-center w-10 m-1 items-center">
                             <button type="submit">
