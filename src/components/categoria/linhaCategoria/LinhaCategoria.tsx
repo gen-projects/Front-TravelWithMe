@@ -1,6 +1,5 @@
-import {TrashSimple } from "@phosphor-icons/react"
+import {PencilSimple, TrashSimple } from "@phosphor-icons/react"
 import Categoria from "../../../models/Categoria"
-import ModalCategoria from "../modalCategoria/ModalCategoria"
 import { Link } from "react-router"
 
 interface LinhaCategoriaProps{
@@ -15,12 +14,16 @@ function LinhaCategoria({categoria}: LinhaCategoriaProps) {
         <td className="border-b border-gray-300">{categoria.descricao}</td>
 
         <td className="border-b border-gray-300">
-            <ModalCategoria/>
+            <div className="flex justify-center">
+                <Link to={`/editarcategorias/${categoria.id}`}>
+                    <PencilSimple size={32} className="hover:opacity-60 hover:size-8.5" />
+                </Link>
+            </div>
         </td>
 
         <td className="border-b border-gray-300">
             <div className="flex justify-center">
-                <Link to={`/editarcategorias/${categoria.id}`}>
+                <Link to={`/deletarcategoria/${categoria.id}`}>
                     <TrashSimple size={32} className='hover:opacity-60 hover:size-8.5' />
                 </Link>
             </div>

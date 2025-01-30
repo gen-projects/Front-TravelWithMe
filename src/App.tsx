@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 import FormCategoria from './components/categoria/formCategoria/FormCategoria'
+import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria'
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
             <Route path="/cadastrarcategorias" element={<FormCategoria />} />
             <Route path="/editarcategorias/:id" element={<FormCategoria />} />
             <Route path="/categoria/:id" element={<h1>a</h1>} />
-            <Route path="/deletarcategoria" element={<h1>a</h1>} />
+            <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
           </Routes>
         </div>
       
