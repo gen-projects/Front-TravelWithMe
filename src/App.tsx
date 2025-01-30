@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
+import FormViagem from './components/viagem/formviagem/FormViagem.tsx'
+import CancelarViagem from './components/viagem/cancelarviagem/CancelarViagem.tsx'
 import './App.css'
+import Viagens from './pages/viagens/Viagens'
 
 import ListarCategoria from './components/categoria/listarCategoria/ListarCategoria'
 import FormCategoria from './components/categoria/formCategoria/FormCategoria'
@@ -10,6 +13,8 @@ import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -19,16 +24,19 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
-            <Route path="/viagens" element={<h1>Viagens</h1>} />
-            <Route path="/cadastrarviagens" element={<h1>Cadastrar Viagens</h1>} />
-            <Route path="/editarviagens" element={<h1>Editar Viagens</h1>} />
-            <Route path="/cancelar" element={<h1>Cancelar</h1>} />
-            <Route path="/viagens/:id" element={<h1>Detalhes da Viagem</h1>} />
-            <Route path="/categorias" element={<h1>Categorias</h1>} />
-            <Route path="/cadastrarcategorias" element={<h1>Cadastrar Categorias</h1>} />
-            <Route path="/editarcategorias" element={<h1>Editar Categorias</h1>} />
-            <Route path="/categoria/:id" element={<h1>Detalhes da Categoria</h1>} />
-            <Route path="/deletarcategoria" element={<h1>Deletar Categoria</h1>} />
+            
+            <Route path="/viagens" element={<Viagens/>} />
+            <Route path="/cadastrarviagens" element={<FormViagem />} />
+            <Route path="/editarviagens/:id" element={<FormViagem/>} />
+            <Route path="/cancelar/:id" element={<CancelarViagem />} />
+            <Route path="/viagens/:id" element={<h1>a</h1>} />
+
+            <Route path="/categorias" element={<ListarCategoria />} />
+            <Route path="/cadastrarcategorias" element={<FormCategoria />} />
+            <Route path="/editarcategorias/:id" element={<FormCategoria />} />
+            <Route path="/categoria/:id" element={<h1>a</h1>} />
+            <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+
           </Routes>
         </div>
         <Footer />

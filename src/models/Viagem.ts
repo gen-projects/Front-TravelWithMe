@@ -7,6 +7,5 @@ export default interface Viagem {
     distancia: number;
     tipo: string;
     destino: string;
-
     categoria?: Categoria | null;
 }

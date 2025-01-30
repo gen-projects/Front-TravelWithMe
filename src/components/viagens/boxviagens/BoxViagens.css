@@ -1,0 +1,10 @@
+.scrollable {
+  max-height: 35rem; 
+  overflow-y: scroll; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; 
+}
