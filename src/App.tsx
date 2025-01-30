@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
+import FormViagem from './components/viagem/formviagem/FormViagem.tsx'
+import CancelarViagem from './components/viagem/cancelarviagem/CancelarViagem.tsx'
 import './App.css'
 
 function App() {
@@ -13,9 +15,9 @@ function App() {
             <Route path="/sobre" element={<h1>a</h1>} />
             
             <Route path="/viagens" element={<h1>a</h1>} />
-            <Route path="/cadastrarviagens" element={<h1>a</h1>} />
-            <Route path="/editarviagens" element={<h1>a</h1>} />
-            <Route path="/cancelar" element={<h1>a</h1>} />
+            <Route path="/cadastrarviagens" element={<FormViagem />} />
+            <Route path="/editarviagens/:id" element={<FormViagem/>} />
+            <Route path="/cancelar/:id" element={<CancelarViagem />} />
             <Route path="/viagens/:id" element={<h1>a</h1>} />
 
             <Route path="/categorias" element={<h1>a</h1>} />
