@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Categoria from "../../../models/Categoria"
-import { buscar } from "../../../services/Service"
+import { buscar, buscarCategoria } from "../../../services/Service"
 import LinhaCategoria from "../linhaCategoria/LinhaCategoria"
 import { Link } from "react-router"
+import { MagnifyingGlass } from "@phosphor-icons/react"
 
 
 function ListarCategoria() {
@@ -14,6 +15,14 @@ function ListarCategoria() {
             await buscar('/categorias', setCategorias)
         }catch(error:any){
             console.log("Erro ao buscar categorias")
+        }
+    }
+
+    async function buscarPorNome(filtro: string) {
+        try {
+            await buscarCategoria(`/categorias/categoria/${filtro}`,setCategorias);
+        } catch (error: any) {
+            console.log("Erro ao filtrar por categoria");
         }
     }
 
@@ -38,7 +47,21 @@ function ListarCategoria() {
                 </div>
             </div>
             <div className="p-2 w-full ml-4">
-                <div className="flex justify-end pb-1">
+                <div className="flex pb-1" >
+                    <form className="flex flex-row overflow-hidden rounded-2xl max-h-10 w-full 
+                                    border border-gray-400 bg-gray-200 mr-1">
+                        <input 
+                            type="text"
+                            name="filtro"
+                            placeholder="Pesquise por Categoria" 
+                            className="border-r border-gray-400 w-full p-2" 
+                        />
+                        <div className="flex justify-center w-10 m-1 items-center">
+                            <button type="submit">
+                                <MagnifyingGlass size={32} className="opacity-60 hover:scale-110"/>
+                            </button>
+                        </div>
+                    </form>
                     <Link to ={'/cadastrarcategorias'}>
                         <button className="flex items-center gap-2 border-2 border-slate-700 bg-slate-700 rounded-2xl px-4 py-1 text-white 
                             font-semibold text-lg transition-all duration-200 ease-in-out hover:bg-slate-700/80 hover:border-slate-700/30">
