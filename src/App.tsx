@@ -9,6 +9,8 @@ import FormCategoria from './components/categoria/formCategoria/FormCategoria'
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria'
 import Home from './pages/home/Home'
 import Sobre from './pages/sobre/Sobre'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -16,11 +18,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        
-        <div className='min-h-[84.7dvh]'>
+        <Navbar />
+        <div className="min-h-[84.7dvh]">
           <Routes>
-            <Route path="/" element={<Home />} />     
-            <Route path="/home" element={<Home />} />     
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/sobre" element={<Sobre />} />
             
             <Route path="/viagens" element={<Viagens/>} />
@@ -34,13 +36,13 @@ function App() {
             <Route path="/editarcategorias/:id" element={<FormCategoria />} />
             <Route path="/categoria/:id" element={<h1>a</h1>} />
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+
           </Routes>
         </div>
-      
+        <Footer />
       </BrowserRouter>
     </>
-  )
-
+  );
 }
 
 export default App;

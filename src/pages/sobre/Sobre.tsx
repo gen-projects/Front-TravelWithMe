@@ -1,17 +1,8 @@
 function SobreNos() {
     return (
-      <div
-        className="bg-slate-950 text-white min-h-screen flex items-center justify-center"
-        style={{
-          backgroundImage: `url('https://ik.imagekit.io/frkfxaslz/back.jpg?updatedAt=1738192884071')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          fontFamily: "Arial, sans-serif", // Definindo a fonte Arial
-        }}
-      >
+    
         <main className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 bg-slate-950 bg-opacity-80 rounded-lg shadow-2xl transition-all transform hover:scale-105">
-          <div className="md:w-2/5">
+          <div className="md:w-2/5 mb-6 md:mb-0">
             <img
               alt="Sobre Nos imagem"
               className="rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
@@ -33,9 +24,8 @@ function SobreNos() {
             </button>
           </div>
         </main>
-      </div>
     );
   }
-
+  
   export default SobreNos;
   
