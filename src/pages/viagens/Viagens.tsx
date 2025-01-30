@@ -38,8 +38,8 @@ function Viagens() {
         <div className="mb-6">
           <SearchBar setSearchQuery={setSearchQuery} />
         </div>
-        <div className="flex flex-col md:flex-row gap-4 min-h-[60dvh] sm:h-full">
-          <div className=" sm:w-[10vw]">
+        <div className="flex flex-col md:flex-row gap-4 min-h-[60dvh] md:h-full">
+          <div className=" md:w-[1/3]">
             <Sidebar setFilter={setFilter} viagens={viagens} />
           </div>
           <BoxViagens
